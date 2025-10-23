@@ -13,7 +13,7 @@ export default function BrandKitSection() {
   return (
     <section ref={ref} className="py-20 md:py-32 relative overflow-hidden">
       {/* Enhanced background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-transparent to-fuchsia-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-emerald-900/10" />
       <div className="absolute inset-0 backdrop-blur-[100px]" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -24,7 +24,7 @@ export default function BrandKitSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-prompt">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-200 via-white to-fuchsia-200 pb-2">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-emerald-200 pb-2">
               Brand Assets
             </span>
           </h2>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Pacifico } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/ui/logo";
+import Link from "next/link";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -93,7 +94,7 @@ export default function HeroSection() {
 
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.05] via-transparent to-emerald-500/[0.05] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape
@@ -101,7 +102,7 @@ export default function HeroSection() {
           width={600}
           height={140}
           rotate={12}
-          gradient="from-indigo-500/[0.15]"
+          gradient="from-blue-500/[0.15]"
           className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
         />
 
@@ -110,7 +111,7 @@ export default function HeroSection() {
           width={500}
           height={120}
           rotate={-15}
-          gradient="from-rose-500/[0.15]"
+          gradient="from-emerald-500/[0.15]"
           className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
         />
 
@@ -119,7 +120,7 @@ export default function HeroSection() {
           width={300}
           height={80}
           rotate={-8}
-          gradient="from-violet-500/[0.15]"
+          gradient="from-cyan-500/[0.15]"
           className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
         />
 
@@ -128,7 +129,7 @@ export default function HeroSection() {
           width={200}
           height={60}
           rotate={20}
-          gradient="from-amber-500/[0.15]"
+          gradient="from-blue-400/[0.15]"
           className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
         />
 
@@ -137,7 +138,7 @@ export default function HeroSection() {
           width={150}
           height={40}
           rotate={-25}
-          gradient="from-cyan-500/[0.15]"
+          gradient="from-emerald-400/[0.15]"
           className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
         />
       </div>
@@ -171,7 +172,7 @@ export default function HeroSection() {
             >
               <motion.span
                 className={cn(
-                  "tagline-gradient p-8 inline-block bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300",
+                  "tagline-gradient p-8 inline-block bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-white/90 to-emerald-300",
                   pacifico.className
                 )}
                 initial={{ y: 20, opacity: 0 }}
@@ -187,9 +188,69 @@ export default function HeroSection() {
                   WebkitTransform: "translateZ(0)",
                 }}
               >
-                Extra, Before Ordinary
+                Lightning Fast Storage
               </motion.span>
             </motion.h1>
+          </motion.div>
+
+          <motion.div
+            custom={2}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-center"
+          >
+            <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+              Store, share, and access your files from anywhere with our lightning-fast cloud storage solution. 
+              Built for speed, security, and simplicity.
+            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Link href="/auth/signup">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Get Started Free
+                </motion.button>
+              </Link>
+              <Link href="/auth/signin">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300"
+                >
+                  Sign In
+                </motion.button>
+              </Link>
+            </motion.div>
+            
+            {/* Additional Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+              className="mt-6 flex justify-center gap-6 text-sm"
+            >
+              <Link 
+                href="/auth/signin" 
+                className="text-white/40 hover:text-white/60 transition-colors"
+              >
+                Already have an account?
+              </Link>
+              <span className="text-white/20">•</span>
+              <Link 
+                href="#pricing" 
+                className="text-white/40 hover:text-white/60 transition-colors"
+              >
+                View pricing plans
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>

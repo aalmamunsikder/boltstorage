@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Prompt } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/sections/footer";
 import ContextMenuProvider from "@/components/providers/context-menu-provider";
 import { siteConfig, getOgImageUrl } from "@/config/site";
 
@@ -29,7 +28,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.urls.base),
   title: {
-    default: `${siteConfig.name} | Extra, Before Ordinary`,
+    default: `${siteConfig.name} | Lightning Fast Cloud Storage`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
   authors: [...siteConfig.authors],
   creator: siteConfig.creator,
   appleWebApp: {
-    title: "Queforia",
+    title: "BoltStorage",
     capable: true,
     statusBarStyle: "default",
     startupImage: [
@@ -139,7 +138,6 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#030303]" suppressHydrationWarning>
         <ContextMenuProvider>
           {children}
-          <Footer />
         </ContextMenuProvider>
       </body>
     </html>

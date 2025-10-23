@@ -27,7 +27,7 @@ export default function Logo({
       className="inline-block relative"
     >
       {showGradient && (
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/30 via-violet-500/30 to-rose-500/30 rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 via-emerald-500/30 to-cyan-500/30 rounded-full" />
       )}
       <div
         className={cn(
@@ -40,13 +40,13 @@ export default function Logo({
           className={cn(
             "font-['Prompt'] font-bold tracking-wide",
             showGradient
-              ? "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white to-rose-300"
+              ? "bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-white to-emerald-300"
               : "text-white",
             sizes[size],
             className
           )}
         >
-          Queforia
+          BoltStorage
         </span>
       </div>
     </motion.div>

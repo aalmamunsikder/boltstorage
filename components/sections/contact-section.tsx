@@ -42,8 +42,8 @@ export default function ContactSection() {
             className="absolute inset-0 opacity-20"
             animate={{
               background: [
-                "radial-gradient(400px circle at left top, rgba(139, 92, 246, 0.15), transparent 80%)",
-                "radial-gradient(400px circle at right bottom, rgba(244, 114, 182, 0.15), transparent 80%)",
+                "radial-gradient(400px circle at left top, rgba(59, 130, 246, 0.15), transparent 80%)",
+                "radial-gradient(400px circle at right bottom, rgba(16, 185, 129, 0.15), transparent 80%)",
               ],
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
@@ -59,10 +59,10 @@ export default function ContactSection() {
           transition={transition}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-200 via-white to-fuchsia-200">
-            Start The Journey
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-emerald-200">
+            Get In Touch
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-violet-500/50 to-fuchsia-500/50 mx-auto mb-8 blur-sm" />
+          <div className="w-20 h-0.5 bg-gradient-to-r from-blue-500/50 to-emerald-500/50 mx-auto mb-8 blur-sm" />
         </motion.div>
 
         <motion.div
@@ -73,18 +73,34 @@ export default function ContactSection() {
           className="max-w-7xl mx-auto"
         >
           <div className="relative">
-            <div className="absolute -left-20 -top-20 w-96 h-96 bg-violet-500/10 rounded-full blur-[100px]" />
-            <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-[100px]" />
+            <div className="absolute -left-20 -top-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]" />
+            <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px]" />
 
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white/[0.03] border border-white/10 rounded-2xl p-8 lg:p-12">
               <div className="space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
-                  Let's Connect
+                  Ready to Get Started?
                 </h3>
                 <p className="text-white/60 text-lg leading-relaxed">
-                  Share your vision and let's create something extraordinary
-                  together. Your journey into the mysterious begins here.
+                  Have questions about BoltStorage? Need help with your account, 
+                  or want to learn more about our enterprise solutions? 
+                  We're here to help you store your data faster and more securely.
                 </p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                    <span className="text-white/80">24/7 Customer Support</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                    <span className="text-white/80">Enterprise Solutions Available</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-cyan-500 rounded-full" />
+                    <span className="text-white/80">Free Migration Support</span>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-8">
@@ -103,7 +119,7 @@ export default function ContactSection() {
                         }
                         placeholder="Your name"
                         className="w-full px-4 h-12 bg-white/[0.03] border border-white/10 rounded-xl 
-                          focus:outline-none focus:ring-2 focus:ring-violet-500/50 
+                          focus:outline-none focus:ring-2 focus:ring-blue-500/50 
                           transition-all duration-300 placeholder:text-white/30 text-white/80
                           hover:bg-white/[0.05]"
                       />
@@ -121,7 +137,7 @@ export default function ContactSection() {
                         }
                         placeholder="Your email"
                         className="w-full px-4 h-12 bg-white/[0.03] border border-white/10 rounded-xl 
-                          focus:outline-none focus:ring-2 focus:ring-violet-500/50 
+                          focus:outline-none focus:ring-2 focus:ring-blue-500/50 
                           transition-all duration-300 placeholder:text-white/30 text-white/80
                           hover:bg-white/[0.05]"
                       />
@@ -139,9 +155,9 @@ export default function ContactSection() {
                         }))
                       }
                       rows={4}
-                      placeholder="Your message"
+                      placeholder="How can we help you?"
                       className="w-full px-4 py-3 bg-white/[0.03] border border-white/10 rounded-xl 
-                        focus:outline-none focus:ring-2 focus:ring-violet-500/50 
+                        focus:outline-none focus:ring-2 focus:ring-blue-500/50 
                         transition-all duration-300 placeholder:text-white/30 text-white/80
                         hover:bg-white/[0.05]"
                     />
@@ -151,9 +167,9 @@ export default function ContactSection() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-6 py-3 w-full rounded-full bg-white/5 border border-white/10 
-                      text-white/80 hover:bg-white/10 transition-all duration-300 
-                      inline-flex items-center justify-center space-x-2"
+                    className="px-6 py-3 w-full rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 
+                      text-white font-semibold transition-all duration-300 
+                      inline-flex items-center justify-center space-x-2 hover:from-blue-600 hover:to-emerald-600"
                   >
                     <span>Send Message</span>
                     <motion.div

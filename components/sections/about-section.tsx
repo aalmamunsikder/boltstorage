@@ -2,6 +2,73 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { cn } from "@/lib/utils"
+
+function ElegantShape({
+  className,
+  delay = 0,
+  width = 400,
+  height = 100,
+  rotate = 0,
+  gradient = "from-white/[0.08]",
+}: {
+  className?: string;
+  delay?: number;
+  width?: number;
+  height?: number;
+  rotate?: number;
+  gradient?: string;
+}) {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: -150,
+        rotate: rotate - 15,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        rotate: rotate,
+      }}
+      transition={{
+        duration: 2.4,
+        delay,
+        ease: [0.23, 0.86, 0.39, 0.96],
+        opacity: { duration: 1.2 },
+      }}
+      className={cn("absolute", className)}
+    >
+      <motion.div
+        animate={{
+          y: [0, 15, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+        }}
+        style={{
+          width,
+          height,
+        }}
+        className="relative"
+      >
+        <div
+          className={cn(
+            "absolute inset-0 rounded-full",
+            "bg-gradient-to-r to-transparent",
+            gradient,
+            "backdrop-blur-[2px] border-2 border-white/[0.15]",
+            "shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
+            "after:absolute after:inset-0 after:rounded-full",
+            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"
+          )}
+        />
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function AboutSection() {
   const [ref, inView] = useInView({
@@ -33,7 +100,9 @@ export default function AboutSection() {
 
   return (
     <section ref={ref} className="py-20 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/5 via-transparent to-rose-900/5" />
+      {/* Unique background gradient for about section */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/[0.05] via-transparent to-pink-500/[0.05] blur-3xl" />
+
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
@@ -42,13 +111,18 @@ export default function AboutSection() {
           animate={inView ? "visible" : "hidden"}
           className="max-w-4xl mx-auto"
         >
-          <motion.div variants={variants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 via-white to-rose-200">
-              The Essence of Queforia
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-emerald-200">
+              Why Choose BoltStorage?
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-rose-500 mx-auto mb-8" />
             <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
-              We exist in the space between imagination and reality, crafting experiences that transcend the ordinary.
+              Experience the future of cloud storage with our lightning-fast, secure, and user-friendly platform.
             </p>
           </motion.div>
 
@@ -57,7 +131,7 @@ export default function AboutSection() {
               variants={variants}
               className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/[0.05] transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -68,18 +142,14 @@ export default function AboutSection() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-indigo-300"
+                  className="text-blue-300"
                 >
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                  <path d="m22 2-5 5" />
-                  <path d="m2 22 5-5" />
-                  <path d="m17 7-5 5" />
-                  <path d="m7 17 5-5" />
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-white/90">Mysterious</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white/90">Lightning Fast</h3>
               <p className="text-white/60">
-                We embrace the unknown and invite you to discover what lies beyond the veil of conventional thinking.
+                Blazing-fast upload and download speeds powered by global CDN infrastructure for instant access to your files.
               </p>
             </motion.div>
 
@@ -87,7 +157,7 @@ export default function AboutSection() {
               variants={variants}
               className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/[0.05] transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-violet-500/20 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -98,16 +168,15 @@ export default function AboutSection() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-violet-300"
+                  className="text-emerald-300"
                 >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                  <path d="M2 12h20" />
+                  <rect x="3" y="11" width="18" height="10" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-white/90">Philosophical</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white/90">Secure</h3>
               <p className="text-white/60">
-                We question the nature of existence and purpose, infusing our creations with deeper meaning.
+                End-to-end encryption and advanced security protocols keep your data safe and private at all times.
               </p>
             </motion.div>
 
@@ -115,7 +184,7 @@ export default function AboutSection() {
               variants={variants}
               className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/[0.05] transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -126,16 +195,16 @@ export default function AboutSection() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-rose-300"
+                  className="text-cyan-300"
                 >
-                  <path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z" />
-                  <polyline points="2.32 6.16 12 11 21.68 6.16" />
-                  <line x1="12" y1="22.76" x2="12" y2="11" />
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-white/90">Premium</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white/90">Unlimited Storage</h3>
               <p className="text-white/60">
-                We craft experiences of exceptional quality, where every detail is considered and refined.
+                Scale your storage needs effortlessly with our flexible plans that grow with your business.
               </p>
             </motion.div>
           </div>
@@ -144,4 +213,3 @@ export default function AboutSection() {
     </section>
   )
 }
-

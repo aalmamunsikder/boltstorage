@@ -1,50 +1,51 @@
 // Base URL configuration as const
 export const BASE_URL = {
-  SITE: "https://queforia.com",
-  API: "https://api.queforia.com",
-  SHOP: "https://shop.queforia.com",
-  ASSETS: "https://assets.queforia.com",
+  SITE: "https://boltstorage.com",
+  API: "https://api.boltstorage.com",
+  DASHBOARD: "https://app.boltstorage.com",
+  ASSETS: "https://assets.boltstorage.com",
 } as const;
 
 export const siteConfig = {
-  name: "Queforia",
-  description: "Extra, Before Ordinary",
+  name: "BoltStorage",
+  description: "Lightning Fast Cloud Storage",
   url: BASE_URL.SITE,
-  ogImage: getOgImageUrl({ title: "Queforia", mode: "dark" }),
+  ogImage: getOgImageUrl({ title: "BoltStorage", mode: "dark" }),
   links: {
-    shop: BASE_URL.SHOP,
+    dashboard: BASE_URL.DASHBOARD,
     social: {
-      instagram: "https://instagram.com/queforia",
-      twitter: "https://twitter.com/queforia",
-      youtube: "https://youtube.com/@queforia",
+      twitter: "https://twitter.com/boltstorage",
+      github: "https://github.com/boltstorage",
+      linkedin: "https://linkedin.com/company/boltstorage",
     },
   },
-  creator: "@queforia",
+  creator: "@boltstorage",
   keywords: [
-    "Queforia",
-    "Innovation",
-    "Design",
-    "Creative",
-    "Technology",
-    "Premium Brand",
-    "Mystery",
-    "Extraordinary",
+    "BoltStorage",
+    "Cloud Storage",
+    "File Sharing",
+    "Data Storage",
+    "Backup",
+    "Sync",
+    "Secure Storage",
+    "Fast Storage",
+    "Enterprise Storage",
   ] as string[], // Fix readonly array issue
   authors: [
     {
-      name: "Queforia Team",
+      name: "BoltStorage Team",
       url: `${BASE_URL.SITE}/team`,
     },
   ] as const,
   brandColors: [
     { value: "#050a30", label: "Navy", description: "Primary brand color" },
     {
-      value: "#233dff",
-      label: "Electric Blue",
-      description: "Secondary accent",
+      value: "#3b82f6",
+      label: "Bolt Blue",
+      description: "Primary accent",
     },
     { value: "#f2efeb", label: "Cream", description: "Light backgrounds" },
-    { value: "#8f5d46", label: "Brown", description: "Warm accent" },
+    { value: "#10b981", label: "Emerald", description: "Success accent" },
   ],
   aspectRatios: [
     // Common & Social Media Ratios
@@ -141,9 +142,9 @@ export const siteConfig = {
       },
     },
     social: {
-      instagram: "https://instagram.com/queforia",
-      twitter: "https://twitter.com/queforia",
-      youtube: "https://youtube.com/@queforia",
+      twitter: "https://twitter.com/boltstorage",
+      github: "https://github.com/boltstorage",
+      linkedin: "https://linkedin.com/company/boltstorage",
     },
     legal: {
       privacy: "/privacy",

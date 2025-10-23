@@ -1,9 +1,11 @@
 import HeroSection from "@/components/sections/hero-section";
 import AboutSection from "@/components/sections/about-section";
 import PhilosophySection from "@/components/sections/philosophy-section";
-import ContactSection from "@/components/sections/contact-section";
-import ConnectSection from "@/components/sections/connect-section";
-import BrandKitSection from "@/components/sections/brand-kit-section";
+import PricingSection from "@/components/sections/pricing-section";
+import TestimonialSection from "@/components/sections/testimonial-section";
+import FAQSection from "@/components/sections/faq-section";
+import NewsletterSection from "@/components/sections/newsletter-section";
+import Footer from "@/components/sections/footer";
 
 export default function Home() {
   return (
@@ -11,9 +13,11 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <PhilosophySection />
-      <ConnectSection />
-      <BrandKitSection />
-      <ContactSection />
+      <PricingSection />
+      <TestimonialSection />
+      <FAQSection />
+      <NewsletterSection />
+      <Footer />
     </main>
   );
 }
